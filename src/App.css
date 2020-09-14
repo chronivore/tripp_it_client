@@ -1,0 +1,29 @@
+body {
+    background-image: url('./assets/plane.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#title {
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+}
+
+.mainDiv {
+    width: 300px;
+    margin: auto;
+    margin-top: 40px;
+    background-color: whitesmoke;
+    padding: 50px;
+    /* min-height: 350px; */
+}
+
+a {
+    font-size:  14px;
+    line-height: 18px;
+    font-weight: 600;
+    color: rgba(var(--d69,0,149,246),1);
+    text-decoration: none;
+    margin:8px;
+}
