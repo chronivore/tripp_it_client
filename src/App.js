@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Login from './auth/Login';
 import Auth from './auth/Auth';
-import Home from './home/Homepage';
+import Trips from './home/Homepage';
 
 function App() {
   const [sessionToken, setSessionToken] = useState('');
@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div>
-      {!sessionToken ? <Auth updateToken={updateToken}/> : <Home sessionToken={sessionToken}/>}
+      {!sessionToken ? <Auth updateToken={updateToken}/> : <Trips sessionToken={sessionToken}/>}
     </div>
   );
 }
