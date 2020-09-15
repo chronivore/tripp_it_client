@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Login from './auth/Login';
 import Auth from './auth/Auth';
+<<<<<<< HEAD
 import Home from './home/Homepage';
+=======
+>>>>>>> b992e4d5cd08e126644469a1f593f869574541c4
 import Trips from './home/Homepage';
 
 function App() {
@@ -28,7 +31,11 @@ function App() {
 
   return (
     <div>
+<<<<<<< HEAD
       {!sessionToken ? <Auth updateToken={updateToken}/> : <Trips />}
+=======
+      {!sessionToken ? <Auth updateToken={updateToken}/> : <Trips sessionToken={sessionToken}/>}
+>>>>>>> b992e4d5cd08e126644469a1f593f869574541c4
     </div>
   );
 }
