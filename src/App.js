@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Login from './auth/Login';
 import Auth from './auth/Auth';
+import Trips from './homepage/homepage';
 
-function App() {
+function App(props) {
   const [sessionToken, setSessionToken] = useState('');
 
   useEffect(() => {
@@ -21,6 +22,7 @@ function App() {
   return (
     <div>
       <Auth updateToken={updateToken}/>
+      { props.setLoggedIn ? <Trips /> : null }
     </div>
   );
 }
