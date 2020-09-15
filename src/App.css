@@ -27,3 +27,7 @@ a {
     text-decoration: none;
     margin:8px;
 }
+
+#homeDiv {
+    background-image: url('./assets/desert.jpeg');
+}
