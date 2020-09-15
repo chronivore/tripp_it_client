@@ -3,6 +3,7 @@ import { Container, Row, Button, Collapse, Card, CardBody } from "reactstrap";
 import SignUp from "./SignUp";
 import Login from "./Login";
 import { CSSTransition } from 'react-transition-group';
+import APIURL from '../helpers/environment';
 
 const Auth = (props) => {
   const [isOpen, setIsOpen] = useState(true);

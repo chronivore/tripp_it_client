@@ -18,6 +18,12 @@ function App() {
     console.log(sessionToken);
   }
 
+  // componentDidMount(){
+  //   fetch(`${APIURL}/user`)
+  //   .then(response => response.json())
+  //   .then(user => this.setState({user}))
+  // }
+
   return (
     <div>
       <Auth updateToken={updateToken}/>
