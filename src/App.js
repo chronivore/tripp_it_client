@@ -20,6 +20,7 @@ function App() {
 
   return (
     <div>
+      <h1> This is AMruta</h1>
       <Auth updateToken={updateToken}/>
     </div>
   );
