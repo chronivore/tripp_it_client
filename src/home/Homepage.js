@@ -1,4 +1,9 @@
+// import React, { useState, useEffect } from 'react';
 
+// const baseUrl = "https://api.unsplash.com/search/collections"
+// const key = "cWWHbdry3jWwqN-oVfyv2PTba6XsO1bpU7KmiS-YJQo";
+// let pictureType = "travel";
+// let number_of_entries = 100;
 
 //  const Home = (props) => {
 
@@ -23,7 +28,6 @@
 //     )
 // }
 // export default Home;
-
 import React, { useState, useEffect } from "react";
 import { 
     Container, 
@@ -40,10 +44,6 @@ import {
 
 const Trips = (props) => {
 
-const baseUrl = "https://api.unsplash.com/search/collections"
-const key = "cWWHbdry3jWwqN-oVfyv2PTba6XsO1bpU7KmiS-YJQo";
-let pictureType = "travel";
-let number_of_entries = 100;
 
   let baseURL = 'https://ana-tripp-it-server.herokuapp.com/trip/';
 
@@ -114,4 +114,3 @@ let number_of_entries = 100;
   }
 
   export default Trips;
-
