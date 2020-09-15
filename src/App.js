@@ -2,10 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Login from './auth/Login';
 import Auth from './auth/Auth';
-<<<<<<< HEAD
-import Home from './home/Homepage';
-=======
->>>>>>> b992e4d5cd08e126644469a1f593f869574541c4
 import Trips from './home/Homepage';
 
 function App() {
@@ -23,19 +19,15 @@ function App() {
     console.log(sessionToken);
   }
 
-  // componentDidMount(){
-  //   fetch(`${APIURL}/user`)
-  //   .then(response => response.json())
-  //   .then(user => this.setState({user}))
-  // }
+  const clearToken =  () => {
+    localStorage.clear();
+    setSessionToken('');
+  }
 
   return (
     <div>
-<<<<<<< HEAD
-      {!sessionToken ? <Auth updateToken={updateToken}/> : <Trips />}
-=======
-      {!sessionToken ? <Auth updateToken={updateToken}/> : <Trips sessionToken={sessionToken}/>}
->>>>>>> b992e4d5cd08e126644469a1f593f869574541c4
+      
+      {!sessionToken ? <Auth updateToken={updateToken}/> : <Trips sessionToken={sessionToken} clickLogout={clearToken}/>}
     </div>
   );
 }
