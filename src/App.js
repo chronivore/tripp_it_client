@@ -19,15 +19,15 @@ function App() {
     console.log(sessionToken);
   }
 
-  // componentDidMount(){
-  //   fetch(`${APIURL}/user`)
-  //   .then(response => response.json())
-  //   .then(user => this.setState({user}))
-  // }
+  const clearToken =  () => {
+    localStorage.clear();
+    setSessionToken('');
+  }
 
   return (
     <div>
-      {!sessionToken ? <Auth updateToken={updateToken}/> : <Trips sessionToken={sessionToken}/>}
+      
+      {!sessionToken ? <Auth updateToken={updateToken}/> : <Trips sessionToken={sessionToken} clickLogout={clearToken}/>}
     </div>
   );
 }

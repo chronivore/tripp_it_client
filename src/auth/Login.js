@@ -31,21 +31,22 @@ import APIURL from '../helpers/environment'
 
     return (
         <div>
-            <h1>Login</h1>
+            <h3 className='titleHeaders'>Let's get going!</h3>
+            <br/>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
-                    <Label htmlFor="email">Email: </Label>
-                    <Input name="email" value={email}
+                    {/* <Label htmlFor="email">Email: </Label> */}
+                    <Input name="email" value={email} placeholder="Email" type="email"
                     onChange={ e => setEmail(e.target.value)}/>
                 </FormGroup>
                 <br />
                 <FormGroup>
-                    <Label htmlFor="password">Password: </Label>
-                    <Input name="password" value={password}
+                    {/* <Label htmlFor="password">Password: </Label> */}
+                    <Input name="password" value={password} type="password" placeholder="Password"
                      onChange={ e => setPassword(e.target.value)}/>
                 </FormGroup>
                 <br />
-                <Button type="submit">Login</Button>
+                <Button color="primary" block type="submit">Login</Button>
             </Form>
         </div>
     )
