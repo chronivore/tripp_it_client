@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Login from './auth/Login';
 import Auth from './auth/Auth';
+import Trips from './home/Homepage';
 
 function App() {
   const [sessionToken, setSessionToken] = useState('');
@@ -18,16 +19,15 @@ function App() {
     console.log(sessionToken);
   }
 
-  // componentDidMount(){
-  //   fetch(`${APIURL}/user`)
-  //   .then(response => response.json())
-  //   .then(user => this.setState({user}))
-  // }
+  const clearToken =  () => {
+    localStorage.clear();
+    setSessionToken('');
+  }
 
   return (
     <div>
-      <h1> This is AMruta</h1>
-      <Auth updateToken={updateToken}/>
+      
+      {!sessionToken ? <Auth updateToken={updateToken}/> : <Trips sessionToken={sessionToken} clickLogout={clearToken}/>}
     </div>
   );
 }

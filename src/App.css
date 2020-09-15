@@ -11,7 +11,7 @@ body {
 }
 
 .mainDiv {
-    width: 300px;
+    width: 450px;
     margin: auto;
     margin-top: 40px;
     background-color: whitesmoke;
@@ -26,4 +26,13 @@ a {
     color: rgba(var(--d69,0,149,246),1);
     text-decoration: none;
     margin:8px;
+}
+
+#homeDiv {
+    background-image: url('./assets/desert.jpeg');
+}
+
+.titleHeaders {
+    color: rgba(var(--f52,142,142,142),1);
+    text-align: center;
 }
