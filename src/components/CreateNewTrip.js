@@ -62,8 +62,8 @@ const CreateNewTrip = (props) => {
                 <Col>
                     <Card id="where">
                         <CardBody>
-                        <CardImg width="100%" src="../assets/chickboat.jpeg" alt="chickonaboat" />
-                            <CardTitle>Where</CardTitle>
+                        <CardImg id="wherecard" width="100%" src="https://images.pexels.com/photos/885880/pexels-photo-885880.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="chickonaboat" />
+                            <CardTitle></CardTitle>
                         </CardBody>
                        
                     </Card>
