@@ -30,59 +30,28 @@
 // export default Home;
 import React, { useState, useEffect } from "react";
 import { 
-    Container, 
-    Row, 
-    Col, 
-    Card, 
-    CardTitle, 
-    CardImg,
-    CardText,
-    CardBody,
-    CardSubtitle,
-    Button,
-    Table } from "reactstrap";
-
-const Trips = (props) => {
-
-
-  let baseURL = 'https://ana-tripp-it-server.herokuapp.com/trip/';
-
-  useEffect(() => {
-    fetch(baseURL, {
-        method: "GET",
-        headers: new Headers({
-          "Content-Type": "application/json"
-        }),
-      })
-        .then((res) => res.json())
-        .then((trips) => {
-            console.log(trips);
-        })
-        .catch(err => console.log(err));
-  }, []);
-
-  const listAllTrips = (trips) => {
-    let tripsByDate = trips.sort( ( tripA, tripB ) => tripB.Date - tripA.Date )
-    return (
-      <div>
-        {tripsByDate.map( trip => {
-          return (
-            <Row>
-              <Col>
-                <Card>
-                  <CardTitle></CardTitle>
-                </Card>
-              </Col>
-            </Row>
-          )
-        })}
-      </div>
-    )
-  }
+  Container, 
+  Row, 
+  Col, 
+  Card, 
+  CardTitle, 
+  CardImg,
+  CardText,
+  CardBody,
+  CardSubtitle,
+  Button,
+  Table } from "reactstrap";
+import ListAllTrips from '../components/ListAllTrips';
 
 
+const Homepage = (props) => {
 
-  const Example = (props) => {
+
+  
+//rendering planned trips refactored to ../components/ListAllTrips
+
+
+ /*  const Example = (props) => {
     return (
       <div>
         <Card>
@@ -96,22 +65,15 @@ const Trips = (props) => {
         </Card>
       </div>
     );
-  };
+  }; */
 
   return(
       <div>
         <Button onClick={props.clickLogout}>Logout</Button>
         <h1 id="tripp">tripp.it</h1>
-          <Container fluid>
-            <Row>
-              <Col id="where"></Col>
-              <Col id="when"></Col>
-              <Col id="how"></Col>
-            </Row>
-          </Container>
       </div>
   )
 
   }
 
-  export default Trips;
+  export default Homepage;
