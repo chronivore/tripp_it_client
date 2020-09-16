@@ -1,32 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Button, FormFeedback } from 'reactstrap';
 import APIURL from '../helpers/environment'
 
  const Login = (props) => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [isValidEmail, setIsValidEmail] = useState(false);
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch(`${APIURL}/user/login/`, {
-            method: 'POST',
-            body: JSON.stringify({
-                user:{
-                    email: email,
-                    password: password    
-                }
-            }),
-            headers: new Headers({
-                'Content-Type' : 'application/json'
+   
+            fetch(`${APIURL}/user/login/`, {
+                method: 'POST',
+                body: JSON.stringify({
+                    user:{
+                        email: email,
+                        password: password    
+                    }
+                }),
+                headers: new Headers({
+                    'Content-Type' : 'application/json'
+                })
             })
-        })
-        .then( res => res.json())
-        .then(data => {
-            props.updateToken(data.sessionToken);
-            console.log("User successfully logged in");
-        })
-        .catch(err => console.log(err))
+            .then( res => res.json())
+            .then(data => {
+                props.updateToken(data.sessionToken);
+                console.log("User successfully logged in");
+            })
+            .catch(err => console.log(err))
     }
 
     return (
@@ -35,14 +37,12 @@ import APIURL from '../helpers/environment'
             <br/>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
-                    {/* <Label htmlFor="email">Email: </Label> */}
-                    <Input name="email" value={email} placeholder="Email" type="email"
-                    onChange={ e => setEmail(e.target.value)}/>
+                    <Input name="email" value={email} placeholder="Email" type="email" required
+                    onChange={ e => { setEmail(e.target.value)}} />
                 </FormGroup>
                 <br />
                 <FormGroup>
-                    {/* <Label htmlFor="password">Password: </Label> */}
-                    <Input name="password" value={password} type="password" placeholder="Password"
+                    <Input name="password" value={password} type="password" placeholder="Password" required
                      onChange={ e => setPassword(e.target.value)}/>
                 </FormGroup>
                 <br />
