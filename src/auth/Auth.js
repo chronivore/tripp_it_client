@@ -16,40 +16,19 @@ const Auth = (props) => {
     <Container>
       <h1 id="title"> Tripp It!!</h1>
       <Row  >
-        {/* <Collapse  > */}
-          {isOpen ? (
+      {isOpen ? (
             <div className="mainDiv">
               <Login updateToken={props.updateToken} />
-              <h5>Don't have an account?<a href="#" onClick={toggle}>Sign Up</a></h5>
+              <br/>
+              <h6>Don't have an account?<a href="#" onClick={toggle}>Sign Up</a></h6>
             </div>
           ) : (
             <div className="mainDiv">
               <SignUp updateToken={props.updateToken} />
-              <h5>
-                Go back?
-                <a href="#" onClick={toggle}>
-                  Login
-                </a>
-              </h5>
+              <br/>
+              <h6>Go back? <a href="#" onClick={toggle}>Login</a></h6>
             </div>
           )}
-        {/* </Collapse> */}
-
-        {/* <Collapse isOpen={isSignUpOpen} timeout={{enter: 200, exit: 200}}>
-          {isSignUpOpen ? (
-            <div>
-              <SignUp updateToken={props.updateToken} />
-              <h5>
-                Go back to Login?
-                <a href="#" onClick={toggleLogin}>
-                  Login
-                </a>
-              </h5>
-            </div>
-          ) : (
-            ""
-          )}
-        </Collapse> */}
       </Row>
     </Container>
   );

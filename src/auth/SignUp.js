@@ -37,33 +37,35 @@ import APIURL from '../helpers/environment';
     })
     return (
         <div>
-            <h1>SignUp</h1>
-            <Form onSubmit={handleSubmit}>
+            <h4 className="titleHeaders">Signup to plan your trips</h4>
+            <br/>
+             <Form onSubmit={handleSubmit}>
             <FormGroup>
-                    <Label htmlFor="firstName">First Name: </Label>
-                    <Input name="firstName"  onChange={e => setFirstName(e.target.value)}
-                    value={firstName}/>
+                    {/* <Label htmlFor="firstName">First Name: </Label> */}
+                    <Input name="firstName"  type="text" placeholder="First Name"
+                    onChange={e => setFirstName(e.target.value)} value={firstName}/>
                 </FormGroup>
                 <br/>
                 <FormGroup>
-                    <Label htmlFor="lastName">Last Name: </Label>
-                    <Input name="lastName" onChange={e => setLastName(e.target.value)}
+                    {/* <Label htmlFor="lastName">Last Name: </Label> */}
+                    <Input name="lastName" type="text" placeholder="Last Name"
+                    onChange={e => setLastName(e.target.value)}
                     value={lastName}/>
                 </FormGroup>
                 <br/>
                 <FormGroup>
-                    <Label htmlFor="email">Email: </Label>
-                    <Input name="email" onChange={e => setEmail(e.target.value)}
-                    value={email}/>
+                    {/* <Label htmlFor="email">Email: </Label> */}
+                    <Input name="email" placeholder="Email" type="email"
+                    onChange={e => setEmail(e.target.value)} value={email}/>
                 </FormGroup>
                 <br/>
                 <FormGroup>
-                    <Label htmlFor="password">Password: </Label>
-                    <Input name="password" onChange={e => setPassword(e.target.value)}
-                    value={password}/>
+                    {/* <Label htmlFor="password">Password: </Label> */}
+                    <Input name="password" type="password" placeholder="Password"
+                    onChange={e => setPassword(e.target.value)} value={password}/>
                 </FormGroup>
                 <br/>
-                <Button type="submit">Sign Up</Button>
+                <Button color="primary" block type="submit">Sign Up</Button>
             </Form>
         </div>
     )
