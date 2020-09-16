@@ -62,15 +62,17 @@ const CreateNewTrip = (props) => {
                 <Col>
                     <Card id="where">
                         <CardBody>
-                        <CardImg width="100%" src="../assets/chickboat.jpeg" alt="chickonaboat" />
+                        <CardImg width="100%" src={props.arrImages[Math.floor(Math.random() * Math.floor(props.arrImages.length-1))]}
+                         alt="chickonaboat" />
                             <CardTitle>Where</CardTitle>
                         </CardBody>
-                       
                     </Card>
                 </Col>
                 <Col>
                     <Card>
                         <CardBody>
+                        <CardImg width="100%" src={props.arrImages[Math.floor(Math.random() * Math.floor(props.arrImages.length-1))]}
+                         alt="chickonaboat" />
                         <CardTitle>When</CardTitle>
                         </CardBody>
                     </Card>
@@ -78,6 +80,8 @@ const CreateNewTrip = (props) => {
                 <Col>
                     <Card>
                         <CardBody>
+                        <CardImg width="100%" src={props.arrImages[Math.floor(Math.random() * Math.floor(props.arrImages.length-1))]}
+                         alt="" />
                         <CardTitle>How</CardTitle>
                         </CardBody>
                     </Card>

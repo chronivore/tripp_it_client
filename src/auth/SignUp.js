@@ -10,7 +10,7 @@ const SignUp = (props) => {
   const [password, setPassword] = useState("");
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     console.log(firstName, lastName, email, password);
 
     fetch(`${APIURL}/user/signup/`, {
@@ -43,7 +43,7 @@ const SignUp = (props) => {
         <AvField
           name="firstName"
           type="text"
-          autoComplete="off"
+          autoComplete="new"
           placeholder="First Name"
           onChange={(e) => setFirstName(e.target.value)}
           value={firstName}
@@ -60,7 +60,7 @@ const SignUp = (props) => {
         <AvField
           name="lastName"
           type="text"
-          autoComplete="off"
+          autoComplete="new"
           placeholder="Last Name"
           onChange={(e) => setLastName(e.target.value)}
           value={lastName}
@@ -93,7 +93,7 @@ const SignUp = (props) => {
           minLength="10"
           required
           value={password}
-          autoComplete="off"
+          autoComplete="new-password"
           onChange={(e) => setPassword(e.target.value)}
           validate={{
             minLength: {
