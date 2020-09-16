@@ -44,7 +44,7 @@ const Homepage = (props) => {
         <Button onClick={props.clickLogout}>Logout</Button>
         <h1 id="tripp">tripp.it</h1>
         <CreateNewTrip />
-       
+        <ListAllTrips sessionToken={props.sessionToken}/>
       </div>
   )
 

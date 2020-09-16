@@ -14,7 +14,7 @@ import {
     CardSubtitle,
     Button,
     Table } from "reactstrap";
-    import APIURL from '../helpers/environment';
+import APIURL from '../helpers/environment';
 
 
 
