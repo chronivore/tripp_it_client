@@ -30,7 +30,7 @@ const ListAllTrips = (props) => {
         .catch(err => console.log(err));
   }, []);
 
-  const listAllTrips = (trips) => {
+  /* const listAllTrips = (trips) => {
     let tripsByDate = trips.sort( ( tripA, tripB ) => tripB.Date - tripA.Date )
     return (
       <div>
@@ -54,12 +54,12 @@ const ListAllTrips = (props) => {
         })}
       </div>
     )
-  }
+  } */
 
   return(
 
     <div>
-        {listAllTrips()}
+        { /*listAllTrips() */}
     </div> 
   )
 }
