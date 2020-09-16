@@ -18,7 +18,7 @@ const Auth = (props) => {
       <Row  >
       {isOpen ? (
             <div className="mainDiv">
-              <Login updateToken={props.updateToken} />
+              <Login updateToken= {props.updateToken} />
               <br/>
               <h6>Don't have an account?<a href="#" onClick={toggle}>Sign Up</a></h6>
             </div>
