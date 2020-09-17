@@ -58,41 +58,7 @@ const CreateNewTrip = (props) => {
 
     return(
         <div>
-            <Row>
-                <Col>
-                    <Card id="where">
-                        <CardBody>
-                        <CardImg className="randomImages" src={props.arrImages[Math.floor(Math.random() * Math.floor(props.arrImages.length-1))]}
-                         alt="image not loading" />
-                            <CardTitle className="cardHeaders">Where</CardTitle>
-                            <CardImg className="randomImages" src={props.arrImages[Math.floor(Math.random() * Math.floor(props.arrImages.length-1))]}
-                         alt="image not loading" />
-                        </CardBody>
-                    </Card>
-                </Col>
-                <Col>
-                    <Card>
-                        <CardBody>
-                        <CardImg className="randomImages" src={props.arrImages[Math.floor(Math.random() * Math.floor(props.arrImages.length-1))]}
-                         alt="image not loading" />
-                        <CardTitle className="cardHeaders">When</CardTitle>
-                        <CardImg className="randomImages" src={props.arrImages[Math.floor(Math.random() * Math.floor(props.arrImages.length-1))]}
-                         alt="image not loading" />
-                        </CardBody>
-                    </Card>
-                </Col>
-                <Col>
-                    <Card>
-                        <CardBody>
-                        <CardImg className="randomImages" src={props.arrImages[Math.floor(Math.random() * Math.floor(props.arrImages.length-1))]}
-                         alt="image not loading" />
-                        <CardTitle className="cardHeaders">How</CardTitle>
-                        <CardImg className="randomImages" src={props.arrImages[Math.floor(Math.random() * Math.floor(props.arrImages.length-1))]}
-                         alt="image not loading" />
-                        </CardBody>
-                    </Card>
-                </Col>
-            </Row>
+            
             <Row>
                 <Button>Create</Button>
             </Row>

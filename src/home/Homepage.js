@@ -14,7 +14,6 @@ import {
   Table } from "reactstrap";
 import ListAllTrips from '../components/ListAllTrips';
 import CreateNewTrip from '../components/CreateNewTrip';
-import FetchTrips from '../components/FetchTrips';
 import RandomImages from "./RandomImages";
 import FetchTrips from '../components/FetchTrips';
 
@@ -22,38 +21,51 @@ import FetchTrips from '../components/FetchTrips';
 const Homepage = (props) => {
   const [arrImages, setArrImages] = useState([]);
 
-//rendering planned trips refactored to ../components/ListAllTrips
-
-
- /*  const Example = (props) => {
-    return (
-      <div>
-        <Card>
-          <CardImg top width="100%" src="../assets/" alt="Card image cap" />
-          <CardBody>
-            <CardTitle>Card title</CardTitle>
-            <CardSubtitle>Card subtitle</CardSubtitle>
-            <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-            <Button>Button</Button>
-          </CardBody>
-        </Card>
-      </div>
-    );
-  }; */
-
   return(
       <div>
-        <Button onClick={props.clickLogout}>Logout</Button>
-        <h1 id="tripp">tripp.it</h1>
-        <FetchTrips sessionToken={props.sessionToken} />
-        <CreateNewTrip sessionToken={props.sessionToken} />
-        {/* <Button onClick={props.clickLogout}>Logout</Button> */}
-        {/* <h1 className="mainTitle">tripp.it</h1> */}
        <RandomImages setArrImages={setArrImages}/>
         {/* <h1 id="tripp">tripp.it</h1> */}
+
+        <Row>
+                <Col>
+                    <Card id="where" >
+                        <CardBody >
+                        <CardImg className="randomImages" src={arrImages[Math.floor(Math.random() * Math.floor(arrImages.length-1))]}
+                         alt="image not loading" />
+                            <CardTitle className="cardHeaders"><a className="cardHeaders" href="#createTripSection">Where</a></CardTitle>
+                            <CardImg className="randomImages" src={arrImages[Math.floor(Math.random() * Math.floor(arrImages.length-1))]}
+                         alt="image not loading" />
+                        </CardBody>
+                    </Card>
+                </Col>
+                <Col>
+                    <Card>
+                        <CardBody>
+                        <CardImg className="randomImages" src={arrImages[Math.floor(Math.random() * Math.floor(arrImages.length-1))]}
+                         alt="image not loading" />
+                        <CardTitle className="cardHeaders"><a className="cardHeaders" href="#createTripSection">When</a></CardTitle>
+                        <CardImg className="randomImages" src={arrImages[Math.floor(Math.random() * Math.floor(arrImages.length-1))]}
+                         alt="image not loading" />
+                        </CardBody>
+                    </Card>
+                </Col>
+                <Col>
+                    <Card>
+                        <CardBody>
+                        <CardImg className="randomImages" src={arrImages[Math.floor(Math.random() * Math.floor(arrImages.length-1))]}
+                         alt="image not loading" />
+                        <CardTitle className="cardHeaders"><a className="cardHeaders" href="#createTripSection">How</a></CardTitle>
+                        <CardImg className="randomImages" src={arrImages[Math.floor(Math.random() * Math.floor(arrImages.length-1))]}
+                         alt="image not loading" />
+                        </CardBody>
+                    </Card>
+                </Col>
+            </Row>
+
+        <section id="createTripSection">
+        <CreateNewTrip sessionToken={props.sessionToken} />
+        </section>
         <FetchTrips sessionToken={props.sessionToken} />
-        <CreateNewTrip arrImages={arrImages} sessionToken={props.sessionToken} />
-        {/* <ListAllTrips sessionToken={props.sessionToken} trips={props.trips}/> */}
       </div>
   )
 
