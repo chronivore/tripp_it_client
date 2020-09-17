@@ -45,6 +45,7 @@ const Homepage = (props) => {
         {/* <h1 className="mainTitle">tripp.it</h1> */}
        <RandomImages setArrImages={setArrImages}/>
         <CreateNewTrip arrImages={arrImages}/>
+        <ListAllTrips />
       </div>
   )
 
