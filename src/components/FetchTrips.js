@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import APIURL from '../helpers/environment';
 import ListAllTrips from './ListAllTrips';
 
+import ListAllTrips from './ListAllTrips';
+
 const FetchTrips = (props) => {
     const [trips, setTrips] = useState([]);
 
@@ -18,21 +20,21 @@ const FetchTrips = (props) => {
             .then((res) => res.json())
             .then((tripsData) => {
                 console.log(tripsData);
-                for(const trip in tripsData){
-                    setTrips[trip] = tripsData[trip];
-                }
-                // console.log(trips);
+                
+                setTrips(tripsData);
             })
             .catch(err => console.log(err));
     }
 
-    useEffect (()=>{
-        fetchTrips();
-    },[]) 
+
+    useEffect(() => {
+        fetchTrips()
+    }, [])
+    
 
     return(
         <div>
-             <ListAllTrips trips={trips} sessionToken={props.sessionToken}/>
+            { trips ? <ListAllTrips trips={trips}/> : <div>No Trips To Display!</div> }
         </div>
     )
 }
