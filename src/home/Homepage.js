@@ -42,7 +42,6 @@ const Homepage = (props) => {
 
   return(
       <div>
-        <Button onClick={props.clickLogout}>Logout</Button>
         <h1 id="tripp">tripp.it</h1>
         {/* <Button onClick={props.clickLogout}>Logout</Button> */}
         {/* <h1 className="mainTitle">tripp.it</h1> */}
