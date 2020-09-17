@@ -20,18 +20,21 @@ const FetchTrips = (props) => {
             .then((tripsData) => {
                 console.log(tripsData);
                 for(const trip in tripsData){
-                    trips[trip] = tripsData[trip];
+                    setTrips[trip] = tripsData[trip];
                 }
-                console.log(trips);
+                //console.log(trips);
             })
             .catch(err => console.log(err));
     }
 
+    useEffect(() => {
+        fetchTrips()
+    }, [])
     
 
     return(
         <div>
-            {fetchTrips()}
+            
             <ListAllTrips trips={trips}/>
         </div>
     )
