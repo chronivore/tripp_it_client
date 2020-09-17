@@ -11,55 +11,58 @@ import {
     CardSubtitle,
     Button,
     Table } from "reactstrap";
+import APIURL from '../helpers/environment';
 
 const ListAllTrips = (props) => {
 
-    let baseURL = 'https://ana-tripp-it-server.herokuapp.com/trip/';
+        /* console.log(setTrips);
 
-  useEffect(() => {
-    fetch(baseURL, {
-        method: "GET",
-        headers: new Headers({
-          "Content-Type": "application/json"
-        }),
-      })
-        .then((res) => res.json())
-        .then((trips) => {
-            console.log(trips);
+        let mappedArrays = trips.map( trip => {
+            console.log('This is a trip!');
+            return(
+                <div>
+                    <Card>
+                        <CardBody>
+                            <CardTitle>Trip</CardTitle>
+                            <CardText>From</CardText>
+                            <CardText>To</CardText>
+                            <CardText>When</CardText>
+                            <CardText>Type</CardText>
+                        </CardBody>
+                    </Card>
+                </div>
+            )
         })
-        .catch(err => console.log(err));
-  }, []);
+        
+        return mappedArrays;
+    } */
+       console.log(props.trips)
 
-  /* const listAllTrips = (trips) => {
-    let tripsByDate = trips.sort( ( tripA, tripB ) => tripB.Date - tripA.Date )
-    return (
-      <div>
-        {tripsByDate.map( trip => {
-          return (
-            <Row>
-              <Col>
-                <Card>
-                  <Card.CardTitle>`${trip.fromLocation} to ${trip.toLocation}`</Card.CardTitle>
-                  <Card.Body>
-                    <h2>Itinerary</h2>
-                    <p>`Arriving to ${trip.toLocation} on ${trip.toDate}`</p>
-                    <p>`Returning to ${trip.fromLocation} ${trip.fromDate}`</p>
-                    <p>`Method of Travel: ${trip.travelType}`</p>
-                    <p>`Reason of Travel: ${trip.tripType}`</p>
-                  </Card.Body>
-                </Card>
-              </Col>
-            </Row>
-          )
-        })}
-      </div>
-    )
-  } */
+       console.log(props.trips.length)
+
+        
 
   return(
-
-    <div>
-        { /*listAllTrips() */}
+    <div id="listAllTrips">
+        {props.trips.map( trip => {
+        
+            return(
+                <div key={trip.id}>
+                    <Card>
+                        <CardBody>
+                            <CardTitle>Trip</CardTitle>
+                            <CardText>From: {trip.fromLocation}</CardText>
+                            <CardText>To: {trip.toLocation}</CardText>
+                            <CardText>When: {trip.fromDate}</CardText>
+                            <CardText>Type: {trip.travelType}</CardText>
+                            <CardText>Reason: {trip.tripType}</CardText>
+                            <Button>Edit</Button>
+                            <Button>Delete</Button>
+                        </CardBody>
+                    </Card>
+                </div>
+            )
+        })}
     </div> 
   )
 }

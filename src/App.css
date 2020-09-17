@@ -1,3 +1,4 @@
+
 .loginPage {
     background-image: url('./assets/plane.jpeg');
     background-size: cover;
@@ -14,6 +15,13 @@
     text-align: center;
     padding-top: 10px;
     color: black;
+}
+
+#tripp{
+    color: whitesmoke;
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+
 }
 
 .mainDiv {

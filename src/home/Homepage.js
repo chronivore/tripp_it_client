@@ -14,6 +14,7 @@ import {
   Table } from "reactstrap";
 import ListAllTrips from '../components/ListAllTrips';
 import CreateNewTrip from '../components/CreateNewTrip';
+import FetchTrips from '../components/FetchTrips';
 import RandomImages from "./RandomImages";
 
 
@@ -41,6 +42,10 @@ const Homepage = (props) => {
 
   return(
       <div>
+        <Button onClick={props.clickLogout}>Logout</Button>
+        <h1 id="tripp">tripp.it</h1>
+        <FetchTrips sessionToken={props.sessionToken} />
+        <CreateNewTrip sessionToken={props.sessionToken} />
         {/* <Button onClick={props.clickLogout}>Logout</Button> */}
         {/* <h1 className="mainTitle">tripp.it</h1> */}
        <RandomImages setArrImages={setArrImages}/>

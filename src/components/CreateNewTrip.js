@@ -14,7 +14,7 @@ import {
     CardSubtitle,
     Button,
     Table } from "reactstrap";
-    import APIURL from '../helpers/environment';
+import APIURL from '../helpers/environment';
 
 
 
@@ -92,6 +92,9 @@ const CreateNewTrip = (props) => {
                         </CardBody>
                     </Card>
                 </Col>
+            </Row>
+            <Row>
+                <Button>Create</Button>
             </Row>
         </div>
     )
