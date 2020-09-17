@@ -15,35 +15,9 @@ import APIURL from '../helpers/environment';
 
 const ListAllTrips = (props) => {
 
-        /* console.log(setTrips);
-
-        let mappedArrays = trips.map( trip => {
-            console.log('This is a trip!');
-            return(
-                <div>
-                    <Card>
-                        <CardBody>
-                            <CardTitle>Trip</CardTitle>
-                            <CardText>From</CardText>
-                            <CardText>To</CardText>
-                            <CardText>When</CardText>
-                            <CardText>Type</CardText>
-                        </CardBody>
-                    </Card>
-                </div>
-            )
-        })
-        
-        return mappedArrays;
-    } */
-       console.log(props.trips)
-
-       console.log(props.trips.length)
-
-        
-
   return(
     <div id="listAllTrips">
+
         {props.trips.map( trip => {
         
             return(
@@ -58,6 +32,7 @@ const ListAllTrips = (props) => {
                             <CardText>Reason: {trip.tripType}</CardText>
                             <Button>Edit</Button>
                             <Button>Delete</Button>
+
                         </CardBody>
                     </Card>
                 </div>

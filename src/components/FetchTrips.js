@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react';
 import APIURL from '../helpers/environment';
 import ListAllTrips from './ListAllTrips';
 
+import ListAllTrips from './ListAllTrips';
+
 const FetchTrips = (props) => {
-
     const [trips, setTrips] = useState([]);
-
-    console.log('Fetch connected');
 
     const fetchTrips = () => {
         fetch(`${APIURL}/trip/`, {
@@ -25,6 +24,7 @@ const FetchTrips = (props) => {
             .catch(err => console.log(err));
     }
 
+
     useEffect(() => {
         fetchTrips()
     }, [])
@@ -32,7 +32,7 @@ const FetchTrips = (props) => {
 
     return(
         <div>
-            { trips ? <ListAllTrips trips={trips}/> : <div>No Trips To Display!</div> }
+            { trips.length > 0 ? <ListAllTrips trips={trips}/> : <div>No Trips To Display!</div> }
         </div>
     )
 }

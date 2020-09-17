@@ -1,4 +1,3 @@
-
 .loginPage {
     background-image: url('./assets/plane.jpeg');
     background-size: cover;
@@ -7,7 +6,10 @@
 }
 
 .homePage{
-    background-color: whitesmoke;
+    /* background-color: #FFE7B1; #FFE7B1; */
+    background-image: url('./assets/positive.png');
+    background-size: auto;
+    /* background-repeat: no-repeat; */
     height: 100vh;
 }
 
@@ -17,11 +19,25 @@
     color: black;
 }
 
+#tripp {
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+    font-size: 100px;
+    color: white;
+    text-shadow: 2px 2px black;
+    
+}
+
+#wherecard {
+
+    height: 650px;
+}
+
 #tripp{
     color: whitesmoke;
     font-family: 'Comfortaa', cursive;
     text-align: center;
-
+    text-shadow: 2px 2px black;
 }
 
 .mainDiv {
@@ -61,4 +77,19 @@ a {
     font-size: 30px;
     font-weight: bold;
     text-align: center;
+    text-decoration: none;
+    color:black;
+}
+
+.cardHeaders:hover{
+    text-decoration: none;
+    color: rgba(var(--f52,142,142,142),1);
+}
+
+.navbar {
+    height: 55px;
+}
+
+.cardbody {
+    background-color: #FEE02E;
 }
