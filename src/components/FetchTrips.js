@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import APIURL from '../helpers/environment';
+import ListAllTrips from './ListAllTrips';
 
 import ListAllTrips from './ListAllTrips';
 
 const FetchTrips = (props) => {
-
     const [trips, setTrips] = useState([]);
+
     const fetchTrips = () => {
         fetch(`${APIURL}/trip/`, {
             method: "GET",
