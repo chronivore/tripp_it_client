@@ -23,7 +23,7 @@ const Homepage = (props) => {
 
   return(
       <div>
-        <h1 id="tripp">tripp.it</h1>
+        {/* <h1 id="tripp">tripp.it</h1> */}
        <RandomImages setArrImages={setArrImages}/>
         {/* <h1 id="tripp">tripp.it</h1> */}
 
