@@ -20,8 +20,7 @@ const Auth = (props) => {
       {isOpen ? (
             <div className="mainDiv">
               <Login updateToken= {props.updateToken} email={email} password={password} 
-              setEmail={setEmail} setPassword={setPassword} setFirstName={props.setFirstName} 
-              setLastName={props.setLastName}
+              setEmail={setEmail} setPassword={setPassword}
               />
               <br/>
               <h6>Don't have an account?<a href="#" onClick={toggle}>Sign Up</a></h6>

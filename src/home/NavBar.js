@@ -8,8 +8,7 @@ import {
     Button,
     Nav
 } from 'reactstrap';
-import logo from '../assets/tripitLogo.png'
-
+import logo from '../assets/tripitLogo.png';
 
  const NavBar = (props) => {
 
@@ -28,13 +27,14 @@ import logo from '../assets/tripitLogo.png'
                 <img src={logo}
                 width="150px" height="60px" />
                 </NavbarBrand>
-                    {!props.sessionToken ? "" :
-                    <Nav className="ml-auto" navbar>
-                        <NavItem> <h3 className='titleHeaders'>Welcome {name}!!</h3></NavItem>
-                        <NavItem>
-                        <Button onClick={props.clickLogout} >Logout</Button>
-                        </NavItem>
-                    </Nav>
+                    {
+                        !props.sessionToken ? "" :
+                        <Nav className="ml-auto" navbar>
+                            <NavItem> <h3 className='titleHeaders'>Welcome {name}!!</h3></NavItem>
+                            <NavItem>
+                            <Button onClick={props.clickLogout} >Logout</Button>
+                            </NavItem>
+                        </Nav>
                     }
                 
             </Navbar>
