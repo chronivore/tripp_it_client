@@ -14,11 +14,8 @@ import {
   Table } from "reactstrap";
 import ListAllTrips from '../components/ListAllTrips';
 import CreateNewTrip from '../components/CreateNewTrip';
-<<<<<<< HEAD
 import RandomImages from "./RandomImages";
-=======
 import FetchTrips from '../components/FetchTrips';
->>>>>>> 3f2de1905ded5ba5f98b594e502f0b9a5b2d69d1
 
 
 const Homepage = (props) => {
@@ -48,11 +45,10 @@ const Homepage = (props) => {
         {/* <Button onClick={props.clickLogout}>Logout</Button> */}
         {/* <h1 className="mainTitle">tripp.it</h1> */}
        <RandomImages setArrImages={setArrImages}/>
-        <Button onClick={props.clickLogout}>Logout</Button>
-        <h1 id="tripp">tripp.it</h1>
+        {/* <h1 id="tripp">tripp.it</h1> */}
         <FetchTrips sessionToken={props.sessionToken} />
         <CreateNewTrip arrImages={arrImages} sessionToken={props.sessionToken} />
-        <ListAllTrips sessionToken={props.sessionToken} trips={props.trips}/>
+        {/* <ListAllTrips sessionToken={props.sessionToken} trips={props.trips}/> */}
       </div>
   )
 
