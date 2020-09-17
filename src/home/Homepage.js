@@ -1,33 +1,4 @@
-// import React, { useState, useEffect } from 'react';
 
-// const baseUrl = "https://api.unsplash.com/search/collections"
-// const key = "cWWHbdry3jWwqN-oVfyv2PTba6XsO1bpU7KmiS-YJQo";
-// let pictureType = "travel";
-// let number_of_entries = 100;
-
-//  const Home = (props) => {
-
-//     const fetchResults = () => {
-//         let url = `${baseUrl}?query=${pictureType}&per_page=${number_of_entries}&client_id=${key}`;
-
-//         fetch(url)
-//         .then(res => res.json())
-//         .then(data => {
-//             console.log(data);
-//         })
-//         .catch(err => console.log(err));
-
-//     }
-
-//     return (
-//         <div id="homeDiv">
-//             <h1>HOME</h1>
-//             {fetchResults()}
-            
-//         </div>
-//     )
-// }
-// export default Home;
 import React, { useState, useEffect } from "react";
 import { 
   Container, 
@@ -42,12 +13,14 @@ import {
   Button,
   Table } from "reactstrap";
 import ListAllTrips from '../components/ListAllTrips';
+import CreateNewTrip from '../components/CreateNewTrip';
+import FetchTrips from '../components/FetchTrips';
+import RandomImages from "./RandomImages";
 
 
 const Homepage = (props) => {
+  const [arrImages, setArrImages] = useState([]);
 
-
-  
 //rendering planned trips refactored to ../components/ListAllTrips
 
 
@@ -71,9 +44,16 @@ const Homepage = (props) => {
       <div>
         <Button onClick={props.clickLogout}>Logout</Button>
         <h1 id="tripp">tripp.it</h1>
+        <FetchTrips sessionToken={props.sessionToken} />
+        <CreateNewTrip sessionToken={props.sessionToken} />
+        {/* <Button onClick={props.clickLogout}>Logout</Button> */}
+        {/* <h1 className="mainTitle">tripp.it</h1> */}
+       <RandomImages setArrImages={setArrImages}/>
+        <CreateNewTrip arrImages={arrImages}/>
       </div>
   )
 
   }
 
   export default Homepage;
+
