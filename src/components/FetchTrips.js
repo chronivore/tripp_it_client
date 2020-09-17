@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import APIURL from '../helpers/environment';
+import ListAllTrips from './ListAllTrips';
 
 import ListAllTrips from './ListAllTrips';
 
 const FetchTrips = (props) => {
-
     const [trips, setTrips] = useState([]);
 
-
-    console.log('Fetch connected');
+    // console.log('Fetch connected');
 
     const fetchTrips = () => {
         fetch(`${APIURL}/trip/`, {
