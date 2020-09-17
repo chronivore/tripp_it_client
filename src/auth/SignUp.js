@@ -5,10 +5,13 @@ import { AvForm, AvField } from "availity-reactstrap-validation";
 
 const SignUp = (props) => {
 
-  const handleSubmit = (event) => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  
+  const handleSubmit = (event, errors, values) => {
     // event.preventDefault();
     // console.log(firstName, lastName, email, password);
-
+    if(errors.length === 0 ){
     fetch(`${APIURL}/user/signup/`, {
       method: "POST",
       body: JSON.stringify({
@@ -25,6 +28,7 @@ const SignUp = (props) => {
     })
       .then((res) => {
         if (res.status !== 200) {
+          res.json().then(err=> {alert(err.error)})
           throw new Error("fetch error");
         } else return res.json();
       })
@@ -33,7 +37,8 @@ const SignUp = (props) => {
         // console.log(data.sessionToken);
       })
       .catch((err) => console.log(err));
-  };
+    }
+  }
 
   return (
     <div>
@@ -84,6 +89,7 @@ const SignUp = (props) => {
           onChange={(e) => props.setEmail(e.target.value)}
           validate={{
             required: { value: true, errorMessage: "Please fill this field" },
+            // pattern: {value: '^[A-Za-z0-9]+@', errorMessage: 'HEllo Error '},
           }}
         />
         <br />
