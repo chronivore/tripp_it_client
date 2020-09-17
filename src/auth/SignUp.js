@@ -4,36 +4,37 @@ import APIURL from "../helpers/environment";
 import { AvForm, AvField } from "availity-reactstrap-validation";
 
 const SignUp = (props) => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
   const handleSubmit = (event) => {
     // event.preventDefault();
-    console.log(firstName, lastName, email, password);
+    // console.log(firstName, lastName, email, password);
 
     fetch(`${APIURL}/user/signup/`, {
       method: "POST",
       body: JSON.stringify({
         user: {
-          firstName: firstName,
-          lastName: lastName,
-          email: email,
-          password: password,
+          firstName: props.firstName,
+          lastName: props.lastName,
+          email: props.email,
+          password: props.password,
         },
       }),
       headers: new Headers({
         "Content-Type": "application/json",
       }),
     })
-      .then((response) => response.json())
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("fetch error");
+        } else return res.json();
+      })
       .then((data) => {
         props.updateToken(data.sessionToken);
-        console.log(data.sessionToken);
+        // console.log(data.sessionToken);
       })
       .catch((err) => console.log(err));
   };
+
   return (
     <div>
       <h4 className="titleHeaders">Signup to plan your trips</h4>
@@ -45,8 +46,8 @@ const SignUp = (props) => {
           type="text"
           autoComplete="new"
           placeholder="First Name"
-          onChange={(e) => setFirstName(e.target.value)}
-          value={firstName}
+          onChange={(e) => props.setFirstName(e.target.value)}
+          value={props.firstName}
           validate={{
             required: { value: true, errorMessage: "Please enter a name" },
             pattern: {
@@ -62,8 +63,8 @@ const SignUp = (props) => {
           type="text"
           autoComplete="new"
           placeholder="Last Name"
-          onChange={(e) => setLastName(e.target.value)}
-          value={lastName}
+          onChange={(e) => props.setLastName(e.target.value)}
+          value={props.lastName}
           validate={{
             required: { value: true, errorMessage: "Please enter a name" },
             pattern: {
@@ -78,23 +79,24 @@ const SignUp = (props) => {
           name="email"
           placeholder="Email"
           type="email"
-          value={email}
+          value={props.email}
           autoComplete="off"
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => props.setEmail(e.target.value)}
           validate={{
             required: { value: true, errorMessage: "Please fill this field" },
           }}
         />
         <br />
+                
         <AvField
           name="password"
           placeholder="Password"
           type="password"
           minLength="10"
           required
-          value={password}
-          autoComplete="new-password"
-          onChange={(e) => setPassword(e.target.value)}
+          value={props.password}
+          autoComplete="off"
+          onChange={(e) => props.setPassword(e.target.value)}
           validate={{
             minLength: {
               value: 4,
@@ -107,6 +109,7 @@ const SignUp = (props) => {
           }}
         />
 
+          <AvField name="passwordnew"  hidden/>   
         <br />
         <Button color="primary" block type="submit">
           Sign Up
