@@ -1,6 +1,5 @@
-
 .loginPage {
-    background-image: url('./assets/palm.jpeg');
+    background-image: url('./assets/plane.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -19,6 +18,20 @@
     text-align: center;
     padding-top: 10px;
     color: black;
+}
+
+#tripp {
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+    font-size: 100px;
+    color: white;
+    text-shadow: 2px 2px black;
+    
+}
+
+#wherecard {
+
+    height: 650px;
 }
 
 #tripp{
