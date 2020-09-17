@@ -73,6 +73,7 @@ const CreateNewTrip = (props) => {
                             <br />
                             <input type="text" name="Return" onChange={(e) => setFromLocation(e.target.value)} required />
                             <br />
+                            
                         </CardBody>
                     </Card>
                 </Col>
@@ -107,7 +108,6 @@ const CreateNewTrip = (props) => {
             </Row>
         </div>
     )
-    
 }
 
 export default CreateNewTrip;
