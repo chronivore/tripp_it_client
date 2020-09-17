@@ -1,5 +1,5 @@
-.loginPage {
-    background-image: url('./assets/plane.jpeg');
+body {
+    background-image: url('./assets/palm.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -14,6 +14,13 @@
     text-align: center;
     padding-top: 10px;
     color: black;
+}
+
+#tripp{
+    color: whitesmoke;
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+
 }
 
 .mainDiv {

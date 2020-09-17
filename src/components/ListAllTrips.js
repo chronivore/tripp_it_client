@@ -11,55 +11,61 @@ import {
     CardSubtitle,
     Button,
     Table } from "reactstrap";
+import APIURL from '../helpers/environment';
 
 const ListAllTrips = (props) => {
-
-    let baseURL = 'https://ana-tripp-it-server.herokuapp.com/trip/';
-
-  useEffect(() => {
-    fetch(baseURL, {
-        method: "GET",
-        headers: new Headers({
-          "Content-Type": "application/json"
-        }),
-      })
-        .then((res) => res.json())
-        .then((trips) => {
-            console.log(trips);
+    //const [trips, setTrips] = useState([]);
+    
+    /* useEffect(() => {
+        fetch(`${APIURL}/trip/`, {
+            method: "GET",
+            headers: new Headers({
+            "Content-Type": "application/json",
+            "Authorization": props.sessionToken
+            }),
         })
-        .catch(err => console.log(err));
-  }, []);
+            .then((res) => res.json())
+            .then((trips) => {
+                console.log(trips);
+            })
+            .catch(err => console.log(err));
+    }, []); */
 
-  /* const listAllTrips = (trips) => {
-    let tripsByDate = trips.sort( ( tripA, tripB ) => tripB.Date - tripA.Date )
-    return (
-      <div>
-        {tripsByDate.map( trip => {
-          return (
-            <Row>
-              <Col>
-                <Card>
-                  <Card.CardTitle>`${trip.fromLocation} to ${trip.toLocation}`</Card.CardTitle>
-                  <Card.Body>
-                    <h2>Itinerary</h2>
-                    <p>`Arriving to ${trip.toLocation} on ${trip.toDate}`</p>
-                    <p>`Returning to ${trip.fromLocation} ${trip.fromDate}`</p>
-                    <p>`Method of Travel: ${trip.travelType}`</p>
-                    <p>`Reason of Travel: ${trip.tripType}`</p>
-                  </Card.Body>
-                </Card>
-              </Col>
-            </Row>
-          )
-        })}
-      </div>
-    )
-  } */
+   /*  const listAllTrips = () => {
 
+        //for some goddamn reason trips is an array of objects, yet can't be iterated using
+        //traditional array methods (for, forEach, for of). so far the only function way
+        //to loop through every element is for in, but indexing is needed to access each object in the array??
+        //let tripsArray = [];
+        for (let trip in trips) {
+            console.log(trips[trip]);
+            setTrips(trip-1);
+        }
+
+        console.log(setTrips);
+
+        let mappedArrays = trips.map( trip => {
+            console.log('This is a trip!');
+            return(
+                <div>
+                    <Card>
+                        <CardBody>
+                            <CardTitle>Trip</CardTitle>
+                            <CardText>From</CardText>
+                            <CardText>To</CardText>
+                            <CardText>When</CardText>
+                            <CardText>Type</CardText>
+                        </CardBody>
+                    </Card>
+                </div>
+            )
+        })
+        
+        return mappedArrays;
+    } */
   return(
-
     <div>
-        { /*listAllTrips() */}
+        
     </div> 
   )
 }
