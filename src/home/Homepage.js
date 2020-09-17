@@ -20,10 +20,11 @@ import FetchTrips from '../components/FetchTrips';
 
 const Homepage = (props) => {
   const [arrImages, setArrImages] = useState([]);
+  const [updatedList, setUpdatedList] = useState([]);
 
   return(
       <div>
-        <h1 id="tripp">tripp.it</h1>
+        {/* <h1 id="tripp">tripp.it</h1> */}
        <RandomImages setArrImages={setArrImages}/>
         {/* <h1 id="tripp">tripp.it</h1> */}
 
@@ -64,9 +65,9 @@ const Homepage = (props) => {
             </Row>
 
         <section id="createTripSection">
-        <CreateNewTrip sessionToken={props.sessionToken} />
+        <CreateNewTrip sessionToken={props.sessionToken} setUpdatedList={setUpdatedList}/>
         </section>
-        <FetchTrips sessionToken={props.sessionToken} />
+        <FetchTrips sessionToken={props.sessionToken} updatedList={updatedList}/>
       </div>
   )
 
