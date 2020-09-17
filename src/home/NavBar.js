@@ -24,15 +24,19 @@ import logo from '../assets/tripitLogo.png';
         <div>
             <Navbar className="navbar" color="faded" light expand="md">
                 <NavbarBrand href="/"> 
+                {
+                        !props.sessionToken ? "" :
                 <img src={logo}
                 width="150px" height="50px" />
+ }
                 </NavbarBrand>
+ 
                     {
                         !props.sessionToken ? "" :
                         <Nav className="ml-auto" navbar>
-                            <NavItem> <h3 className='titleHeaders'>Welcome {name}!!</h3></NavItem>
+                            <NavItem> <h4 className="welcomeTag">Welcome {name}!!</h4></NavItem>
                             <NavItem>
-                            <Button onClick={props.clickLogout} >Logout</Button>
+                            <Button onClick={props.clickLogout} color="info" className="btnLogout" >Logout</Button>
                             </NavItem>
                         </Nav>
                     }

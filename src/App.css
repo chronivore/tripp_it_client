@@ -8,10 +8,11 @@
 
 .homePage{
     /* background-color: #FFE7B1; #FFE7B1; */
-    background-image: url('./assets/positive.png');
+    background-image: url('./assets/LIGHTER-CORK.png');
     background-size: auto;
-    /* background-repeat: no-repeat; */
-    height: 100vh;
+    height: 100%;
+    background-repeat: no-repeat;
+    /* opacity: 0.9; */
 }
 
 .mainTitle {
@@ -75,8 +76,17 @@ a {
 
 .navbar {
     height: 55px;
+    background-color: whitesmoke;
+    /* opacity: 0.2; */
 }
 
 .cardbody {
     background-color: #FEE02E;
+}
+
+.welcomeTag {
+    color: black;
+    text-align: center;
+    /* margin-right: 20px; */
+    padding: 5px;
 }
