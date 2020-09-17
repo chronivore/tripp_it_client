@@ -14,6 +14,23 @@ import {
 import APIURL from '../helpers/environment';
 
 const ListAllTrips = (props) => {
+    //const [trips, setTrips] = useState([]);
+    
+    /* useEffect(() => {
+        fetch(`${APIURL}/trip/`, {
+            method: "GET",
+            headers: new Headers({
+            "Content-Type": "application/json",
+            "Authorization": props.sessionToken
+            }),
+        })
+            .then((res) => res.json())
+            .then((trips) => {
+                console.log(trips);
+            })
+            .catch(err => console.log(err));
+    }, []); */
+
 
         /* console.log(setTrips);
 
@@ -58,6 +75,7 @@ const ListAllTrips = (props) => {
                             <CardText>Reason: {trip.tripType}</CardText>
                             <Button>Edit</Button>
                             <Button>Delete</Button>
+
                         </CardBody>
                     </Card>
                 </div>

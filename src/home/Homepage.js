@@ -16,6 +16,7 @@ import ListAllTrips from '../components/ListAllTrips';
 import CreateNewTrip from '../components/CreateNewTrip';
 import FetchTrips from '../components/FetchTrips';
 import RandomImages from "./RandomImages";
+import FetchTrips from '../components/FetchTrips';
 
 
 const Homepage = (props) => {
@@ -49,7 +50,10 @@ const Homepage = (props) => {
         {/* <Button onClick={props.clickLogout}>Logout</Button> */}
         {/* <h1 className="mainTitle">tripp.it</h1> */}
        <RandomImages setArrImages={setArrImages}/>
-        <CreateNewTrip arrImages={arrImages}/>
+        {/* <h1 id="tripp">tripp.it</h1> */}
+        <FetchTrips sessionToken={props.sessionToken} />
+        <CreateNewTrip arrImages={arrImages} sessionToken={props.sessionToken} />
+        {/* <ListAllTrips sessionToken={props.sessionToken} trips={props.trips}/> */}
       </div>
   )
 
