@@ -63,9 +63,10 @@ const ListAllTrips = (props) => {
         
         return mappedArrays;
     } */
+    console.log(props.trips)
   return(
     <div>
-        
+        {}
     </div> 
   )
 }

@@ -46,7 +46,6 @@ const Homepage = (props) => {
         <h1 id="tripp">tripp.it</h1>
         <FetchTrips sessionToken={props.sessionToken} />
         <CreateNewTrip sessionToken={props.sessionToken} />
-        <ListAllTrips sessionToken={props.sessionToken} trips={props.trips}/>
       </div>
   )
 

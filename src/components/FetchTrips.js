@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import APIURL from '../helpers/environment';
+import ListAllTrips from './ListAllTrips';
 
 const FetchTrips = (props) => {
+
+    const [trips, setTrips] = useState([]);
 
     console.log('Fetch connected');
 
@@ -14,16 +17,22 @@ const FetchTrips = (props) => {
             }),
         })
             .then((res) => res.json())
-            .then((trips) => {
+            .then((tripsData) => {
+                console.log(tripsData);
+                for(const trip in tripsData){
+                    trips[trip] = tripsData[trip];
+                }
                 console.log(trips);
             })
             .catch(err => console.log(err));
     }
 
-    fetchTrips();
+    
 
     return(
         <div>
+            {fetchTrips()}
+            <ListAllTrips trips={trips}/>
         </div>
     )
 }
