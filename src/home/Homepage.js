@@ -45,7 +45,9 @@ const Homepage = (props) => {
         {/* <Button onClick={props.clickLogout}>Logout</Button> */}
         {/* <h1 className="mainTitle">tripp.it</h1> */}
        <RandomImages setArrImages={setArrImages}/>
-        <CreateNewTrip arrImages={arrImages}/>
+        <CreateNewTrip arrImages={arrImages} sessionToken={props.sessionToken}/>
+        <FetchTrips sessionToken={props.sessionToken} />
+        {/* <ListAllTrips sessionToken={props.sessionToken} trips={props.trips}/> */}
       </div>
   )
 
