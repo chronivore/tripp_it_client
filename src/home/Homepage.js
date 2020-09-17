@@ -14,6 +14,7 @@ import {
   Table } from "reactstrap";
 import ListAllTrips from '../components/ListAllTrips';
 import CreateNewTrip from '../components/CreateNewTrip';
+import FetchTrips from '../components/FetchTrips';
 
 
 const Homepage = (props) => {
@@ -43,8 +44,9 @@ const Homepage = (props) => {
       <div>
         <Button onClick={props.clickLogout}>Logout</Button>
         <h1 id="tripp">tripp.it</h1>
-        <CreateNewTrip />
-        <ListAllTrips sessionToken={props.sessionToken}/>
+        <FetchTrips sessionToken={props.sessionToken} />
+        <CreateNewTrip sessionToken={props.sessionToken} />
+        <ListAllTrips sessionToken={props.sessionToken} trips={props.trips}/>
       </div>
   )
 

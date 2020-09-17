@@ -1,5 +1,5 @@
 body {
-    background-image: url('./assets/plane.jpeg');
+    background-image: url('./assets/palm.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -8,6 +8,13 @@ body {
     text-align: center;
     padding-top: 10px;
     color: white;
+}
+
+#tripp{
+    color: whitesmoke;
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+
 }
 
 .mainDiv {
