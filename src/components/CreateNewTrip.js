@@ -15,13 +15,14 @@ import {
     Button,
     Table, Form } from "reactstrap";
 import APIURL from '../helpers/environment';
+import FetchTrips from './FetchTrips';
 
 
 
 
 const CreateNewTrip = (props) => {
     
-    const [trip, setTrip] = useState({});
+    //const [trip, setTrip] = useState({});
     const [fromLocation, setFromLocation] = useState('');
     const [toLocation, setToLocation] = useState('');
     const [fromDate, setFromDate] = useState('');
@@ -52,6 +53,7 @@ const CreateNewTrip = (props) => {
         .then( response => response.json())
         .then(data => {
             console.log(data);
+            props.setUpdatedList(data);
         })
         .catch(err => console.log(err))
     })
@@ -106,7 +108,6 @@ const CreateNewTrip = (props) => {
                 </Col>
                 
             </Row>
-            
             <Row>
                 <Button>Create</Button>
             </Row>

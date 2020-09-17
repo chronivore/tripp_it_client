@@ -25,7 +25,7 @@ const FetchTrips = (props) => {
 
     useEffect(() => {
         fetchTrips()
-    }, [])
+    }, [props.updatedList])
     
 
     return(
