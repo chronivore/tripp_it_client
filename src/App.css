@@ -30,6 +30,13 @@
     height: 650px;
 }
 
+#tripp{
+    color: whitesmoke;
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+
+}
+
 .mainDiv {
     width: 450px;
     margin: auto;

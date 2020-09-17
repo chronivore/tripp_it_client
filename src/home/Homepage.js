@@ -15,6 +15,7 @@ import {
 import ListAllTrips from '../components/ListAllTrips';
 import CreateNewTrip from '../components/CreateNewTrip';
 import RandomImages from "./RandomImages";
+import FetchTrips from '../components/FetchTrips';
 
 
 const Homepage = (props) => {
