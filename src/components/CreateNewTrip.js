@@ -28,6 +28,8 @@ const CreateNewTrip = (props) => {
     const [toDate, setToDate] = useState('');
     const [travelType, setTravelType] = useState('');
     const [tripType, setTripType] = useState('');
+    const [ departureDate, setDepartureDate ] = useState('');
+    const [ returnDate, setReturnDate ] = useState('');
 
     const handleSubmit = ((event) => {
         event.preventDefault();
@@ -62,29 +64,46 @@ const CreateNewTrip = (props) => {
                 <Col>
                     <Card id="where">
                         <CardBody>
-                        <CardImg width="100%" src="../assets/chickboat.jpeg" alt="chickonaboat" />
                             <CardTitle>Where</CardTitle>
+                            <span>We're going to (City, State, Country, I don't care lol) : </span>
+                            <br />
+                            <input type="text" name="Destination" onChange={(e) => setToLocation(e.target.value)} required />
+                            <br />
+                            <span>We're returning to (City, State, Country, I don't care lol) : </span>
+                            <br />
+                            <input type="text" name="Return" onChange={(e) => setFromLocation(e.target.value)} required />
+                            <br />
                         </CardBody>
-                       
                     </Card>
                 </Col>
                 <Col>
                     <Card>
                         <CardBody>
-                        <CardTitle>When</CardTitle>
+                            <CardTitle>When</CardTitle>
+                            <span>Departure: </span>
+                            <input type="date" name="departureDate" pattern="[0-9]{8}" onChange={(e) => setDepartureDate(e.target.value)} required/>
+                            <br />
+                            <br />
+                            <span>Return: </span>
+                            <input type="date" name="returnDate" pattern="[0-9]{8}" onChange={(e) => setReturnDate(e.target.value)} required/>
+                            <br />
                         </CardBody>
                     </Card>
                 </Col>
                 <Col>
                     <Card>
                         <CardBody>
-                        <CardTitle>How</CardTitle>
+                            <CardTitle>How</CardTitle>
+                            <span>How are we getting there? (Plane, Car, Train, Boat... Catapult) : </span>
+                            <br />
+                            <input type="text" name="Destination" onChange={(e) => setToLocation(e.target.value)} required />
+                            <br />
                         </CardBody>
                     </Card>
                 </Col>
             </Row>
             <Row>
-                <Button>Create</Button>
+                <Button >Create</Button>
             </Row>
         </div>
     )
