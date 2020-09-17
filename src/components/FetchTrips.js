@@ -5,8 +5,6 @@ import ListAllTrips from './ListAllTrips';
 const FetchTrips = (props) => {
     const [trips, setTrips] = useState([]);
 
-    // console.log('Fetch connected');
-
     const fetchTrips = () => {
         fetch(`${APIURL}/trip/`, {
             method: "GET",
@@ -32,7 +30,7 @@ const FetchTrips = (props) => {
 
     return(
         <div>
-            { trips ? <ListAllTrips trips={trips}/> : <div>No Trips To Display!</div> }
+            { trips.length > 0 ? <ListAllTrips trips={trips}/> : <div>No Trips To Display!</div> }
         </div>
     )
 }
