@@ -2,10 +2,14 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Login from './auth/Login';
 import Auth from './auth/Auth';
-import Trips from './homepage/homepage';
+import Homepage from './home/Homepage';
+import NavBar from './home/NavBar';
+
 
 function App(props) {
   const [sessionToken, setSessionToken] = useState('');
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
 
   useEffect(() => {
     if(localStorage.getItem('token')){
@@ -19,10 +23,20 @@ function App(props) {
     console.log(sessionToken);
   }
 
+  const clearToken =  () => {
+    localStorage.clear();
+    setSessionToken('');
+  }
+
   return (
-    <div>
-      <Auth updateToken={updateToken}/>
-      { props.setLoggedIn ? <Trips /> : null }
+
+    <div className={!sessionToken ? "loginPage" : "homePage"} >
+      <NavBar clickLogout={clearToken} sessionToken={sessionToken} firstName={firstName} lastName={lastName} />
+      {!sessionToken ? 
+      <Auth updateToken={updateToken} firstName={firstName} lastName={lastName} 
+      setFirstName={setFirstName} setLastName={setLastName}/> 
+      : 
+      <Homepage sessionToken={sessionToken} clickLogout={clearToken}/>}
     </div>
   );
 }

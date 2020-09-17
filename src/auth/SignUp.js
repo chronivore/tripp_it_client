@@ -1,70 +1,128 @@
-import React, {useState, useEffect} from 'react';
-import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import React, { useState, useEffect } from "react";
+import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import APIURL from "../helpers/environment";
+import { AvForm, AvField } from "availity-reactstrap-validation";
+
+const SignUp = (props) => {
 
 
- const SignUp = (props) => {
-     
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    
-    const handleSubmit = ((event) => {
-        event.preventDefault();
-        console.log(firstName,lastName,email,password);
-
-        fetch('https://ana-tripp-it-server.herokuapp.com/user/signup', {
-            method: "POST",
-            body: JSON.stringify({
-                user:{
-                    firstName: firstName,
-                    lastName: lastName,
-                    email: email,
-                    password: password
-                }
-            }),
-            headers: new Headers({
-                'Content-Type': 'application/json'
-            })
-        })
-        .then( response => response.json())
-        .then(data => {
-            props.updateToken(data.sessionToken)
-            console.log(data.sessionToken);
-        })
-        .catch(err => console.log(err))
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  
+  const handleSubmit = (event, errors, values) => {
+    // event.preventDefault();
+    // console.log(firstName, lastName, email, password);
+    if(errors.length === 0 ){
+    fetch(`${APIURL}/user/signup/`, {
+      method: "POST",
+      body: JSON.stringify({
+        user: {
+          firstName: props.firstName,
+          lastName: props.lastName,
+          email: props.email,
+          password: props.password,
+        },
+      }),
+      headers: new Headers({
+        "Content-Type": "application/json",
+      }),
     })
-    return (
-        <div>
-            <h1>SignUp</h1>
-            <Form onSubmit={handleSubmit}>
-            <FormGroup>
-                    <Label htmlFor="firstName">First Name: </Label>
-                    <Input name="firstName"  onChange={e => setFirstName(e.target.value)}
-                    value={firstName}/>
-                </FormGroup>
-                <br/>
-                <FormGroup>
-                    <Label htmlFor="lastName">Last Name: </Label>
-                    <Input name="lastName" onChange={e => setLastName(e.target.value)}
-                    value={lastName}/>
-                </FormGroup>
-                <br/>
-                <FormGroup>
-                    <Label htmlFor="email">Email: </Label>
-                    <Input name="email" onChange={e => setEmail(e.target.value)}
-                    value={email}/>
-                </FormGroup>
-                <br/>
-                <FormGroup>
-                    <Label htmlFor="password">Password: </Label>
-                    <Input name="password" onChange={e => setPassword(e.target.value)}
-                    value={password}/>
-                </FormGroup>
-                <br/>
-                <Button type="submit">Sign Up</Button>
-            </Form>
-        </div>
-    )
-}
+      .then((res) => {
+        if (res.status !== 200) {
+          res.json().then(err=> {alert(err.error)})
+          throw new Error("fetch error");
+        } else return res.json();
+      })
+      .then((data) => {
+        props.updateToken(data.sessionToken);
+        // console.log(data.sessionToken);
+      })
+      .catch((err) => console.log(err));
+    }
+  }
+
+  return (
+    <div>
+      <h4 className="titleHeaders">Signup to plan your trips</h4>
+      <br />
+
+      <AvForm onSubmit={handleSubmit}>
+        <AvField
+          name="firstName"
+          type="text"
+          autoComplete="new"
+          placeholder="First Name"
+          onChange={(e) => props.setFirstName(e.target.value)}
+          value={props.firstName}
+          validate={{
+            required: { value: true, errorMessage: "Please enter a name" },
+            pattern: {
+              value: "^[A-Za-z0-9]+$",
+              errorMessage:
+                "Your name must be composed only with letter and numbers",
+            },
+          }}
+        />
+        <br />
+        <AvField
+          name="lastName"
+          type="text"
+          autoComplete="new"
+          placeholder="Last Name"
+          onChange={(e) => props.setLastName(e.target.value)}
+          value={props.lastName}
+          validate={{
+            required: { value: true, errorMessage: "Please enter a name" },
+            pattern: {
+              value: "^[A-Za-z0-9]+$",
+              errorMessage:
+                "Your name must be composed only with letter and numbers",
+            },
+          }}
+        />
+        <br />
+        <AvField
+          name="email"
+          placeholder="Email"
+          type="email"
+          value={props.email}
+          autoComplete="off"
+          onChange={(e) => props.setEmail(e.target.value)}
+          validate={{
+            required: { value: true, errorMessage: "Please fill this field" },
+            // pattern: {value: '^[A-Za-z0-9]+@', errorMessage: 'HEllo Error '},
+          }}
+        />
+        <br />
+                
+        <AvField
+          name="password"
+          placeholder="Password"
+          type="password"
+          minLength="10"
+          required
+          value={props.password}
+          autoComplete="off"
+          onChange={(e) => props.setPassword(e.target.value)}
+          validate={{
+            minLength: {
+              value: 4,
+              errorMessage: "Your password must be between 5 and 16 characters",
+            },
+            maxLength: {
+              value: 16,
+              errorMessage: "Your password must be between 5 and 16 characters",
+            },
+          }}
+        />
+
+          <AvField name="passwordnew"  hidden/>   
+        <br />
+        <Button color="primary" block type="submit">
+          Sign Up
+        </Button>
+      </AvForm>
+    </div>
+  );
+};
 export default SignUp;
