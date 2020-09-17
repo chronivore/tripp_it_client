@@ -1,4 +1,5 @@
-body {
+
+.loginPage {
     background-image: url('./assets/palm.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
