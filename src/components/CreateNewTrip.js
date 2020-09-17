@@ -62,27 +62,33 @@ const CreateNewTrip = (props) => {
                 <Col>
                     <Card id="where">
                         <CardBody>
-                        <CardImg width="100%" src={props.arrImages[Math.floor(Math.random() * Math.floor(props.arrImages.length-1))]}
-                         alt="chickonaboat" />
-                            <CardTitle>Where</CardTitle>
+                        <CardImg className="randomImages" src={props.arrImages[Math.floor(Math.random() * Math.floor(props.arrImages.length-1))]}
+                         alt="image not loading" />
+                            <CardTitle className="cardHeaders">Where</CardTitle>
+                            <CardImg className="randomImages" src={props.arrImages[Math.floor(Math.random() * Math.floor(props.arrImages.length-1))]}
+                         alt="image not loading" />
                         </CardBody>
                     </Card>
                 </Col>
                 <Col>
                     <Card>
                         <CardBody>
-                        <CardImg width="100%" src={props.arrImages[Math.floor(Math.random() * Math.floor(props.arrImages.length-1))]}
-                         alt="chickonaboat" />
-                        <CardTitle>When</CardTitle>
+                        <CardImg className="randomImages" src={props.arrImages[Math.floor(Math.random() * Math.floor(props.arrImages.length-1))]}
+                         alt="image not loading" />
+                        <CardTitle className="cardHeaders">When</CardTitle>
+                        <CardImg className="randomImages" src={props.arrImages[Math.floor(Math.random() * Math.floor(props.arrImages.length-1))]}
+                         alt="image not loading" />
                         </CardBody>
                     </Card>
                 </Col>
                 <Col>
                     <Card>
                         <CardBody>
-                        <CardImg width="100%" src={props.arrImages[Math.floor(Math.random() * Math.floor(props.arrImages.length-1))]}
-                         alt="" />
-                        <CardTitle>How</CardTitle>
+                        <CardImg className="randomImages" src={props.arrImages[Math.floor(Math.random() * Math.floor(props.arrImages.length-1))]}
+                         alt="image not loading" />
+                        <CardTitle className="cardHeaders">How</CardTitle>
+                        <CardImg className="randomImages" src={props.arrImages[Math.floor(Math.random() * Math.floor(props.arrImages.length-1))]}
+                         alt="image not loading" />
                         </CardBody>
                     </Card>
                 </Col>
