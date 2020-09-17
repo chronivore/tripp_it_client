@@ -3,9 +3,12 @@ import './App.css';
 import Login from './auth/Login';
 import Auth from './auth/Auth';
 import Homepage from './home/Homepage';
+import NavBar from './home/NavBar';
 
 function App() {
   const [sessionToken, setSessionToken] = useState('');
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
 
   useEffect(() => {
     if(localStorage.getItem('token')){
@@ -25,9 +28,13 @@ function App() {
   }
 
   return (
-    <div>
-      
-      {!sessionToken ? <Auth updateToken={updateToken}/> : <Homepage sessionToken={sessionToken} clickLogout={clearToken}/>}
+    <div className={!sessionToken ? "loginPage" : "homePage"} >
+      <NavBar clickLogout={clearToken} sessionToken={sessionToken} firstName={firstName} lastName={lastName} />
+      {!sessionToken ? 
+      <Auth updateToken={updateToken} firstName={firstName} lastName={lastName} 
+      setFirstName={setFirstName} setLastName={setLastName}/> 
+      : 
+      <Homepage sessionToken={sessionToken} clickLogout={clearToken}/>}
     </div>
   );
 }
