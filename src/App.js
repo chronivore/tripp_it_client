@@ -5,7 +5,8 @@ import Auth from './auth/Auth';
 import Homepage from './home/Homepage';
 import NavBar from './home/NavBar';
 
-function App() {
+
+function App(props) {
   const [sessionToken, setSessionToken] = useState('');
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -28,6 +29,7 @@ function App() {
   }
 
   return (
+
     <div className={!sessionToken ? "loginPage" : "homePage"} >
       <NavBar clickLogout={clearToken} sessionToken={sessionToken} firstName={firstName} lastName={lastName} />
       {!sessionToken ? 
