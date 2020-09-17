@@ -14,35 +14,8 @@ import {
 import APIURL from '../helpers/environment';
 
 const ListAllTrips = (props) => {
-    //const [trips, setTrips] = useState([]);
-    
-    /* useEffect(() => {
-        fetch(`${APIURL}/trip/`, {
-            method: "GET",
-            headers: new Headers({
-            "Content-Type": "application/json",
-            "Authorization": props.sessionToken
-            }),
-        })
-            .then((res) => res.json())
-            .then((trips) => {
-                console.log(trips);
-            })
-            .catch(err => console.log(err));
-    }, []); */
 
-   /*  const listAllTrips = () => {
-
-        //for some goddamn reason trips is an array of objects, yet can't be iterated using
-        //traditional array methods (for, forEach, for of). so far the only function way
-        //to loop through every element is for in, but indexing is needed to access each object in the array??
-        //let tripsArray = [];
-        for (let trip in trips) {
-            console.log(trips[trip]);
-            setTrips(trip-1);
-        }
-
-        console.log(setTrips);
+        /* console.log(setTrips);
 
         let mappedArrays = trips.map( trip => {
             console.log('This is a trip!');
@@ -63,10 +36,33 @@ const ListAllTrips = (props) => {
         
         return mappedArrays;
     } */
-    console.log(props.trips)
+       console.log(props.trips)
+
+       console.log(props.trips.length)
+
+        
+
   return(
-    <div>
-        {}
+    <div id="listAllTrips">
+        {props.trips.map( trip => {
+        
+            return(
+                <div key={trip.id}>
+                    <Card>
+                        <CardBody>
+                            <CardTitle>Trip</CardTitle>
+                            <CardText>From: {trip.fromLocation}</CardText>
+                            <CardText>To: {trip.toLocation}</CardText>
+                            <CardText>When: {trip.fromDate}</CardText>
+                            <CardText>Type: {trip.travelType}</CardText>
+                            <CardText>Reason: {trip.tripType}</CardText>
+                            <Button>Edit</Button>
+                            <Button>Delete</Button>
+                        </CardBody>
+                    </Card>
+                </div>
+            )
+        })}
     </div> 
   )
 }

@@ -19,10 +19,8 @@ const FetchTrips = (props) => {
             .then((res) => res.json())
             .then((tripsData) => {
                 console.log(tripsData);
-                for(const trip in tripsData){
-                    setTrips[trip] = tripsData[trip];
-                }
-                //console.log(trips);
+                
+                setTrips(tripsData);
             })
             .catch(err => console.log(err));
     }
@@ -34,8 +32,7 @@ const FetchTrips = (props) => {
 
     return(
         <div>
-            
-            <ListAllTrips trips={trips}/>
+            { trips ? <ListAllTrips trips={trips}/> : <div>No Trips To Display!</div> }
         </div>
     )
 }

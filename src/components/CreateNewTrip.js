@@ -83,6 +83,9 @@ const CreateNewTrip = (props) => {
                     </Card>
                 </Col>
             </Row>
+            <Row>
+                <Button>Create</Button>
+            </Row>
         </div>
     )
     
