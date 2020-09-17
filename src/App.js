@@ -32,6 +32,7 @@ function App(props) {
 
     <div className={!sessionToken ? "loginPage" : "homePage"} >
       <NavBar clickLogout={clearToken} sessionToken={sessionToken} firstName={firstName} lastName={lastName} />
+      <h1 id="tripp">tripp.it</h1>
       {!sessionToken ? 
       <Auth updateToken={updateToken} firstName={firstName} lastName={lastName} 
       setFirstName={setFirstName} setLastName={setLastName}/> 

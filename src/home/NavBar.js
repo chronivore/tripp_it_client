@@ -22,10 +22,10 @@ import logo from '../assets/tripitLogo.png';
     
     return (
         <div>
-            <Navbar color="faded" light expand="md">
+            <Navbar className="navbar" color="faded" light expand="md">
                 <NavbarBrand href="/"> 
                 <img src={logo}
-                width="150px" height="60px" />
+                width="150px" height="50px" />
                 </NavbarBrand>
                     {
                         !props.sessionToken ? "" :
