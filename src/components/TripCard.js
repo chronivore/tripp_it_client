@@ -72,21 +72,22 @@ const TripCard = (props) => {
       <Card>
         <CardBody>
           <CardTitle>Trip</CardTitle>
-          <CardText>From: {trip.fromLocation}</CardText>
+          <CardText>Departing to: {trip.fromLocation}</CardText>
           <input
             type="text"
             onChange={(e) => setFromLocation(e.target.value)}
             required
             value={fromLocation}
           />
-          <CardText>To: {trip.toLocation}</CardText>
+          <CardText>Returning to: {trip.toLocation}</CardText>
           <input
             type="text"
             onChange={(e) => setToLocation(e.target.value)}
             required
             value={toLocation}
           />
-          <CardText>FromDate: {new Date(trip.fromDate).toString().substring(0,16)}</CardText>
+          <CardText>Departure Date: {new Date(trip.fromDate).toString()}</CardText>
+          <CardText>Departure Date: {new Date(trip.fromDate).toString().substring(0,16)}</CardText>
           <input
             type="date"
             onChange={(e) => setFromDate(e.target.value)}
@@ -94,7 +95,7 @@ const TripCard = (props) => {
             required
             value={fromDate}
           />
-          <CardText>ToDate: {new Date(trip.toDate).toString().substring(0,16)}</CardText>
+          <CardText>Return Date: {new Date(trip.toDate).toString().substring(0,16)}</CardText>
           <input
             type="date"
             onChange={(e) => setToDate(e.target.value)}
@@ -102,14 +103,14 @@ const TripCard = (props) => {
             required
             value={toDate}
           />
-          <CardText>Type: {trip.travelType}</CardText>
+          <CardText>Method of Travel: {trip.travelType}</CardText>
           <input
             type="text"
             onChange={(e) => setTravelType(e.target.value)}
             required
             value={travelType}
           />
-          <CardText>Reason: {trip.tripType}</CardText>
+          <CardText>Reason for Trip: {trip.tripType}</CardText>
           <input
             type="text"
             onChange={(e) => setTripType(e.target.value)}
