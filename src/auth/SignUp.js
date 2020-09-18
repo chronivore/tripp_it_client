@@ -5,6 +5,7 @@ import { AvForm, AvField } from "availity-reactstrap-validation";
 
 const SignUp = (props) => {
 
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   
@@ -105,7 +106,7 @@ const SignUp = (props) => {
           onChange={(e) => props.setPassword(e.target.value)}
           validate={{
             minLength: {
-              value: 4,
+              value: 5,
               errorMessage: "Your password must be between 5 and 16 characters",
             },
             maxLength: {
