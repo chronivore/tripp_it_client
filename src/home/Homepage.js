@@ -65,9 +65,11 @@ const Homepage = (props) => {
             </Row>
 
         <section id="createTripSection">
-        <CreateNewTrip sessionToken={props.sessionToken} setUpdatedList={setUpdatedList}/>
+            <CreateNewTrip sessionToken={props.sessionToken} setUpdatedList={setUpdatedList}/>
         </section>
-        <FetchTrips sessionToken={props.sessionToken} updatedList={updatedList}/>
+        <section id="viewTripSection">
+            <FetchTrips sessionToken={props.sessionToken} updatedList={updatedList}/>
+        </section>
       </div>
   )
 
