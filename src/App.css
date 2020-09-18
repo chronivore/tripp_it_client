@@ -140,5 +140,10 @@ a {
     color: black;
     text-align: center;
     /* margin-right: 20px; */
-    padding: 5px;
+    padding: 15px;
+}
+
+.btnClick {
+    /* padding: 10px; */
+    margin: 10px;
 }
