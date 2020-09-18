@@ -36,16 +36,17 @@ const NavBar = (props) => {
         ) : (
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <h4 className="welcomeTag">Welcome {name}!!</h4>
+              <h4 className="welcomeTag" id="welcometag">Welcome {name}!!</h4>
             </NavItem>
             <NavItem>
-              <Button><a href="#viewTripSection">View Trips</a></Button>
+              <Button color ="info" id="viewTrips" href="#viewTripSection"><a >View Trips</a></Button>
             </NavItem>
             <NavItem>
               <Button
                 onClick={props.clickLogout}
                 color="info"
                 className="btnLogout"
+                id="logoutbutton"
               >
                 Logout
               </Button>

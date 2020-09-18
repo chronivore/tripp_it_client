@@ -37,6 +37,33 @@
     
 }
 
+.cardHeaders {
+    font-family: 'Comfortaa', cursive;
+}
+
+#welcometag {
+    font-family: 'Comfortaa', cursive;
+}
+
+#logoutbutton {
+    font-family: 'Comfortaa', cursive;
+}
+
+#viewTrips {
+    font-family: 'Comfortaa', cursive;
+    text-decoration: none;
+    color: white;
+}
+
+#going {
+    font-family: 'Comfortaa', cursive;
+}
+
+#viewTrips.visited {
+    text-decoration: none;
+    color: white;
+}
+
 #wherecard {
 
     height: 650px;

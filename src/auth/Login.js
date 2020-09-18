@@ -53,7 +53,7 @@ const Login = (props) => {
 
   return (
     <div>
-      <h3 className="titleHeaders">Let's get going!</h3>
+      <h3 id="going" className="titleHeaders">Let's get going!</h3>
       <br />
       <AvForm onSubmit={handleSubmit}>
         <AvField
