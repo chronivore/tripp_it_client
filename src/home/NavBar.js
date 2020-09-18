@@ -45,7 +45,7 @@ const NavBar = (props) => {
               <Button
                 onClick={props.clickLogout}
                 color="info"
-                className="btnLogout"
+                className="btnClick"
                 id="logoutbutton"
               >
                 Logout
