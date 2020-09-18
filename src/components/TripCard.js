@@ -117,8 +117,8 @@ const TripCard = (props) => {
             required
             value={tripType}
           />
-          <Button onClick={editTrip}>Edit</Button>
-          <Button onClick={deleteTrip}>Delete</Button>
+          <Button onClick={editTrip}  color="info" className="btnClick">Edit</Button>
+          <Button onClick={deleteTrip}  color="info" className="btnClick">Delete</Button>
         </CardBody>
       </Card>
     </div>

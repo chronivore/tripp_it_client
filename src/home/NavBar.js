@@ -39,13 +39,13 @@ const NavBar = (props) => {
               <h4 className="welcomeTag">Welcome {name}!!</h4>
             </NavItem>
             <NavItem>
-              <Button color="secondary"><a href="#viewTripSection">View Trips</a></Button>
+              <Button color="info" className="btnClick" href="#viewTripSection">View Trips</Button>
             </NavItem>
             <NavItem>
               <Button
                 onClick={props.clickLogout}
                 color="info"
-                className="btnLogout"
+                className="btnClick"
               >
                 Logout
               </Button>
