@@ -109,7 +109,7 @@ const CreateNewTrip = (props) => {
                 
             </Row>
             <Row>
-                <Button>Create</Button>
+                <Button  color="info" className="btnClick">Create</Button>
             </Row>
             </Form>
         </div>
