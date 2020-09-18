@@ -86,7 +86,7 @@ const TripCard = (props) => {
             required
             value={toLocation}
           />
-          <CardText>FromDate: {new Date(trip.fromDate).toString()}</CardText>
+          <CardText>FromDate: {new Date(trip.fromDate).toString().substring(0,16)}</CardText>
           <input
             type="date"
             onChange={(e) => setFromDate(e.target.value)}
@@ -94,7 +94,7 @@ const TripCard = (props) => {
             required
             value={fromDate}
           />
-          <CardText>ToDate: {new Date(trip.toDate).toString()}</CardText>
+          <CardText>ToDate: {new Date(trip.toDate).toString().substring(0,16)}</CardText>
           <input
             type="date"
             onChange={(e) => setToDate(e.target.value)}
