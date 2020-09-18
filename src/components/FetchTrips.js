@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Fade } from 'reactstrap';
 import APIURL from '../helpers/environment';
-import ListAllTrips from './ListAllTrips';
+import TripCard from './TripCard';
 
 const FetchTrips = (props) => {
     const [trips, setTrips] = useState([]);
@@ -29,7 +30,12 @@ const FetchTrips = (props) => {
 
     return(
         <div>
-            { trips.length > 0 ? <ListAllTrips trips={trips}/> : <div>No Trips To Display!</div> }
+            { trips.length > 0 ?
+                trips.map((trip) => {
+                  return <TripCard trip={trip} fetchTrips={fetchTrips} sessionToken={props.sessionToken} />
+ })
+ :
+             <div>No Trips To Display!</div> }
         </div>
     )
 }

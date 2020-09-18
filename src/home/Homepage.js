@@ -12,7 +12,7 @@ import {
   CardSubtitle,
   Button,
   Table } from "reactstrap";
-import ListAllTrips from '../components/ListAllTrips';
+import ListAllTrips from '../components/TripCard';
 import CreateNewTrip from '../components/CreateNewTrip';
 import RandomImages from "./RandomImages";
 import FetchTrips from '../components/FetchTrips';
