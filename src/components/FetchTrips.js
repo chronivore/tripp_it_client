@@ -16,7 +16,6 @@ const FetchTrips = (props) => {
             .then((res) => res.json())
             .then((tripsData) => {
                 console.log(tripsData);
-                
                 setTrips(tripsData);
             })
             .catch(err => console.log(err));

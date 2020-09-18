@@ -27,12 +27,11 @@ const ListAllTrips = (props) => {
                             <CardTitle>Trip</CardTitle>
                             <CardText>From: {trip.fromLocation}</CardText>
                             <CardText>To: {trip.toLocation}</CardText>
-                            <CardText>When: {trip.fromDate}</CardText>
+                            <CardText>When: {trip.fromDate.substring(0, 10)}</CardText>
                             <CardText>Type: {trip.travelType}</CardText>
                             <CardText>Reason: {trip.tripType}</CardText>
                             <Button>Edit</Button>
                             <Button>Delete</Button>
-
                         </CardBody>
                     </Card>
                 </div>
