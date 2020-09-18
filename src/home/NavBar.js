@@ -39,7 +39,7 @@ const NavBar = (props) => {
               <h4 className="welcomeTag">Welcome {name}!!</h4>
             </NavItem>
             <NavItem>
-              <Button><a href="#viewTripSection">View Trips</a></Button>
+              <Button color="secondary"><a href="#viewTripSection">View Trips</a></Button>
             </NavItem>
             <NavItem>
               <Button
